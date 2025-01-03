@@ -76,10 +76,15 @@ chmod +x kubectl
 sudo mv kubectl /usr/local/bin
 
 # Docker cli
+# ----------
 sudo apt-get install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Podman
+# ------
+sudo apt install podman
 
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
@@ -133,8 +138,8 @@ Make-Alias 'gd'   'git diff'
 Make-Alias 'gcp'  'git cherry-pick'
 
 # docker aliases
-Make-Alias "d" "docker"
-Make-Alias "dc" "docker compose"
+Make-Alias "d" "podman"
+Make-Alias "dc" "podman compose"
 
 EOF
 ```
