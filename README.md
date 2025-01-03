@@ -25,6 +25,7 @@ sudo apt-get install -y gnupg software-properties-common
 # Git
 # ---
 sudo apt install -y git
+git config --global credential.helper store
 
 # Python
 # ------
