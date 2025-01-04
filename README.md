@@ -82,6 +82,14 @@ sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
+# Trivi
+# -----
+sudo apt-get install wget apt-transport-https gnupg lsb-release
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+sudo apt-get update
+sudo apt-get install -y trivy
+
 # Podman
 # ------
 sudo apt install podman
@@ -92,6 +100,21 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt update && sudo apt install -y docker-ce-cli
+
+# Other tools
+# -----------
+sudo apt install -y \
+    htop \
+    btop \
+    bat \
+    net-tools \
+    cowsay \
+    fortunes-bofh-excuses \
+    yq \
+    lolcat \
+    inetutils-traceroute \
+    mtr-tiny
+
 ```
 
 ---
@@ -103,6 +126,8 @@ pwsh -c '$ProgressPreference = "SilentlyContinue" ; Install-Module DirColors'
 pwsh -c '$ProgressPreference = "SilentlyContinue" ; Install-Module posh-git'
 mkdir -p /home/micha/.config/powershell/
 cat <<'EOF' > ~/.config/powershell/Microsoft.PowerShell_profile.ps1
+Import-Module DirColors
+Import-Module posh-git
 Set-PSReadlineOption -EditMode Emacs
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-Variable -Name MaximumHistoryCount 32767
