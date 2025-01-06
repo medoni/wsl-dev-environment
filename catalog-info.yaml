@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: wsl-dev-environment
+  annotations:
+    github.com/project-slug: medoni/wsl-dev-environment
+spec:
+  type: other
+  lifecycle: development
