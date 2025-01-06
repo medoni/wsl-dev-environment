@@ -20,7 +20,9 @@
 sudo apt update &&
     sudo apt upgrade -y
 
-sudo apt-get install -y gnupg software-properties-common
+sudo apt-get install -y \
+    libsecret-1-0 \
+    gnupg software-properties-common
 
 # Git
 # ---
