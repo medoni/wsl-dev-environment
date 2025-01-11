@@ -4,6 +4,7 @@ metadata:
   name: wsl-dev-environment
   annotations:
     github.com/project-slug: medoni/wsl-dev-environment
+    backstage.io/techdocs-ref: dir:docs/.
 spec:
   owner: medoni
   type: other

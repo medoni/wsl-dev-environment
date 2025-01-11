@@ -1,0 +1,6 @@
+site_name: wsl-dev-environment-documentation
+site_description: Documentation about wsl dev environment
+plugins:
+  - techdocs-core
+nav:
+  - Getting Started: index.md
