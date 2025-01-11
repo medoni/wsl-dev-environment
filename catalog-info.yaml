@@ -2,10 +2,14 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: wsl-dev-environment
+  description: Scripts and tools for creating a developer environment in wsl.
   annotations:
     github.com/project-slug: medoni/wsl-dev-environment
     backstage.io/techdocs-ref: dir:docs/.
+  tags:
+    - wsl
+    - development
 spec:
   owner: medoni
-  type: other
+  type: tool
   lifecycle: development
